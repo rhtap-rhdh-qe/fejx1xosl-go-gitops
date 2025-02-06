@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fejx1xosl-go-gitops
+  description: This is GitOps manifest for fejx1xosl-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=fejx1xosl-go
+    backstage.io/kubernetes-id: fejx1xosl-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fejx1xosl-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fejx1xosl-go
